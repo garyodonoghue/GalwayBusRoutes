@@ -15,6 +15,7 @@
 		4E1F8E901D7F6621007D56C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E1F8E8E1D7F6621007D56C3 /* LaunchScreen.xib */; };
 		4E1F8E9C1D7F6622007D56C3 /* GalwayBusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F8E9B1D7F6622007D56C3 /* GalwayBusTests.swift */; };
 		4E1F8EA81D7F6E46007D56C3 /* RoutesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F8EA71D7F6E45007D56C3 /* RoutesTableViewController.swift */; };
+		4E9A48C81D874B4E00A21F4E /* RoutesRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A48C71D874B4E00A21F4E /* RoutesRequestModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		4E1F8E9A1D7F6622007D56C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E1F8E9B1D7F6622007D56C3 /* GalwayBusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalwayBusTests.swift; sourceTree = "<group>"; };
 		4E1F8EA71D7F6E45007D56C3 /* RoutesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutesTableViewController.swift; sourceTree = "<group>"; };
+		4E9A48C71D874B4E00A21F4E /* RoutesRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoutesRequestModel.swift; path = GalwayBus.xcodeproj/../RoutesRequestModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		4E1F8E7F1D7F6620007D56C3 /* GalwayBus */ = {
 			isa = PBXGroup;
 			children = (
+				4E9A48C71D874B4E00A21F4E /* RoutesRequestModel.swift */,
 				4E1F8EA71D7F6E45007D56C3 /* RoutesTableViewController.swift */,
 				4E1F8E821D7F6620007D56C3 /* AppDelegate.swift */,
 				4E1F8E871D7F6620007D56C3 /* ViewController.swift */,
@@ -220,6 +223,7 @@
 			files = (
 				4E1F8E881D7F6620007D56C3 /* ViewController.swift in Sources */,
 				4E1F8E831D7F6620007D56C3 /* AppDelegate.swift in Sources */,
+				4E9A48C81D874B4E00A21F4E /* RoutesRequestModel.swift in Sources */,
 				4E1F8E861D7F6620007D56C3 /* GalwayBus.xcdatamodeld in Sources */,
 				4E1F8EA81D7F6E46007D56C3 /* RoutesTableViewController.swift in Sources */,
 			);
@@ -417,6 +421,7 @@
 				4E1F8EA11D7F6622007D56C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E1F8EA21D7F6622007D56C3 /* Build configuration list for PBXNativeTarget "GalwayBusTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +430,7 @@
 				4E1F8EA41D7F6622007D56C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

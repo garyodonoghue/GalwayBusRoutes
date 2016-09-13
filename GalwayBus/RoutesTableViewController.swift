@@ -10,8 +10,19 @@ import UIKit
 
 class RoutesTableViewController: UITableViewController {
 
+    let requestModel = RoutesRequestModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+           
+        requestModel.getRoutes("http://galwaybus.herokuapp.com/stops/535201.json"){
+            (data, error) -> Void in
+            if error != nil {
+                println(error)
+            } else {
+                println(data)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +45,8 @@ class RoutesTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        //let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = UITableViewCell();
         
         return cell
     }

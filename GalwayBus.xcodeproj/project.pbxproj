@@ -170,9 +170,11 @@
 				TargetAttributes = {
 					4E1F8E7C1D7F661F007D56C3 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 					};
 					4E1F8E941D7F6621007D56C3 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 						TestTargetID = 4E1F8E7C1D7F661F007D56C3;
 					};
 				};
@@ -355,6 +357,7 @@
 				INFOPLIST_FILE = GalwayBus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -365,6 +368,7 @@
 				INFOPLIST_FILE = GalwayBus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -383,6 +387,7 @@
 				INFOPLIST_FILE = GalwayBusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GalwayBus.app/GalwayBus";
 			};
 			name = Debug;
@@ -398,6 +403,7 @@
 				INFOPLIST_FILE = GalwayBusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GalwayBus.app/GalwayBus";
 			};
 			name = Release;

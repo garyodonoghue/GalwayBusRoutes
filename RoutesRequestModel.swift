@@ -11,23 +11,11 @@ class RoutesRequestModel: NSObject {
    
     var responseString:NSString = "";
     
-    func getRoutes(request: String, callback: (String, String?) -> Void) {
+    func getRoutes(_ url: String, callback: (String, String?) -> Void) {
+        let session = URLSession.shared;
         
-        let url:NSURL = NSURL(string: request)!
-        let session = NSURLSession.sharedSession()
-        
-        let request = NSMutableURLRequest(URL: url)
-        request.HTTPMethod = "GET"
-        request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData
-        
-        let task = session.dataTaskWithRequest(request) {
-            (
-            let data, let response, let error) in
-            
-            let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print(dataString)
-            self.responseString = dataString!
+        session.dataTask(with: URL(string: url)!) {(data, response, error) in
+            print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue))
         }
-        task.resume()    
     }
 }

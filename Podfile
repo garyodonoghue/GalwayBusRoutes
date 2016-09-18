@@ -6,8 +6,10 @@ target 'GalwayBus' do
   use_frameworks!
 
   # Pods for GalwayBus
-  pod 'Alamofire'
-  pod 'SwiftyJSON'  
+    pod 'SwiftyJSON', 
+   :git => 'https://github.com/BaiduHiDeviOS/SwiftyJSON.git', 
+   :branch => 'swift3'
+  
 
   target 'GalwayBusTests' do
     inherit! :search_paths

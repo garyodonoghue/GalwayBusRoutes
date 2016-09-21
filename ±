@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
- platform :ios, '9.1'
+# platform :ios, '9.0'
 
 target 'GalwayBus' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
@@ -7,11 +7,13 @@ target 'GalwayBus' do
 
   # Pods for GalwayBus
   
-   pod 'Alamofire', '~>4.0.0'
+pod 'Alamofire',
+:git => 'https://github.com/Alamofire/Alamofire.git',
+:branch => 'swift3'
 
-    pod 'SwiftyJSON', 
-   :git => 'https://github.com/BaiduHiDeviOS/SwiftyJSON.git', 
-   :branch => 'swift3'
+    pod 'SwiftyJSON' 
+   :git: 'https://github.com/BaiduHiDeviOS/SwiftyJSON.git' 
+   :branch: 'swift3'
   
 
   target 'GalwayBusTests' do

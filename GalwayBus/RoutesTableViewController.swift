@@ -14,15 +14,7 @@ class RoutesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-           
-        requestModel.getRoutes("http://galwaybus.herokuapp.com/stops/535201.json"){
-            (data, error) -> Void in
-            if error != nil {
-                print(error)
-            } else {
-                print(data)
-            }
-        }
+        requestModel.getRoutes("http://galwaybus.herokuapp.com/stops.json")
     }
 
     override func didReceiveMemoryWarning() {

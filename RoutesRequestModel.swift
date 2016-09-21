@@ -6,16 +6,21 @@
 //
 //
 import Foundation
+import SwiftyJSON
+import Alamofire
 
 class RoutesRequestModel: NSObject {
    
-    var responseString:NSString = "";
+    var routesArr:[JSON] = []
     
-    func getRoutes(_ url: String, callback: (String, String?) -> Void) {
-        let session = URLSession.shared;
-        
-        session.dataTask(with: URL(string: url)!) {(data, response, error) in
-            print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue))
+    func getRoutes(_ url: String) {
+        Alamofire.request(url).validate().responseJSON { response in
+            switch response.result {
+                case .success( _):
+                    print("JSON: \(response)")
+                case .failure(let error):
+                    print(error)
+            }
         }
     }
 }

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class RoutesTableViewController: UITableViewController {
-
-    let requestModel = RoutesRequestModel()
+class StopsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestModel.getRoutes("http://galwaybus.herokuapp.com/stops.json")
+        
+        let viewModel = StopsViewModel()
+        viewModel.getRoutes()
     }
 
     override func didReceiveMemoryWarning() {

@@ -6,7 +6,7 @@
 //
 //
 import Foundation
-import Stop
+import ObjectMapper
 
 /* Sample response
  
@@ -29,7 +29,7 @@ class StopsResponseModel: Mappable {
     var long_name : String?
     var short_name : String?
     
-    required init?(_ map: Map){
+    required init?(map: Map){
         
     }
     

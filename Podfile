@@ -6,7 +6,7 @@ target 'GalwayBus' do
   use_frameworks!
 
   # Pods for GalwayBus
-  
+   pod 'ObjectMapper', '~>2.0.0'
    pod 'Alamofire', '~>4.0.0'
    pod 'AlamofireObjectMapper', '~> 4.0.0'
   

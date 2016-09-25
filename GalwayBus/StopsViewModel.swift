@@ -8,30 +8,29 @@
 
 import UIKit
 import AlamofireObjectMapper
-import StopsResponseModel
+import Alamofire
 
-// class should expose prmitive objects to the view controller for binding to the view
 class StopsViewModel{
 
-    var routes = String[]
+    var routes : [String] = []
     
     func getRoutes(){
         let requestModel = StopsRequestModel()
         
-        Alamofire.request(requestModel.requestUrl).validate().responseJSON { (response: Response<[StopsResponseModel], NSError>) in
+        Alamofire.request(requestModel.getRoutesUrl()).validate().responseArray{ (response: DataResponse<[StopsResponseModel]>) in
+            
+            let stopsArray = response.result.value
             
             switch response.result {
             case .success( _):
-                let stopsArray = response.result.value
                 
                 if let stopsArray = stopsArray {
                     for stop in stopsArray {
                         print(stop.timetable_id)
-                        routes.append(stop.timetable_id)
+                        self.routes.append(stop.timetable_id!)
                     }
                 }
                 
-            // format response array into an array of strings representing all the stops
             case .failure(let error):
                 print(error)
             }

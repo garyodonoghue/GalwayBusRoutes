@@ -10,7 +10,7 @@ import Alamofire
 
 class StopsRequestModel {
    
-    let requestUrl = "http://galwaybus.herokuapp.com/routes";
+    let requestUrl = "http://galwaybus.herokuapp.com/stops";
     public var timetableId : Int = 0;
     
     

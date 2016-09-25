@@ -26,8 +26,8 @@ class StopsViewModel{
                 
                 if let stopsArray = stopsArray {
                     for stop in stopsArray {
-                        print(stop.timetable_id)
-                        self.routes.append(stop.timetable_id!)
+                        print(stop.long_name)
+                        self.routes.append(stop.long_name!)
                     }
                 }
                 

@@ -10,32 +10,42 @@ import ObjectMapper
 
 /* Sample response
  
- {
- "401": {
- "timetable_id": 401,
- "long_name": "Salthill - Eyre Square",
- "short_name": "Salthill"
- },
- "402": {
- "timetable_id": 402,
- "long_name": "Merlin Park - Eyre Square - Seacrest",
- "short_name": "Merlin Park - Seacrest"
- },
+ [{
+	"long_name": "Clydagh Bridge (Eastbound)",
+	"stop_id": 8788,
+	"stop_ref": "532211",
+	"irish_long_name": "",
+	"latitude": 53.32686,
+	"longitude": -9.16784
+ }, {
+	"long_name": "Clydagh Bridge (Westbound)",
+	"stop_id": 8747,
+	"stop_ref": "531651",
+	"irish_long_name": "",
+	"latitude": 53.32664,
+	"longitude": -9.16774
+ }, {
  
 */
 class StopsResponseModel: Mappable {
  
-    var timetable_id : String?
     var long_name : String?
-    var short_name : String?
+    var stop_id : Int?
+    var stop_ref : String?
+    var irish_long_name : String?
+    var latitude : Decimal?
+    var longitude : Decimal?
     
     required init?(map: Map){
         
     }
     
     func mapping(map: Map) {
-        timetable_id <- map["timetable_id"]
         long_name <- map["long_name"]
-        short_name <- map["short_name"]
+        stop_id <- map["stop_id"]
+        stop_ref <- map["stop_ref"]
+        irish_long_name <- map["irish_long_name"]
+        latitude <- map["latitude"]
+        longitude <- map["longitude"]
     }
 }

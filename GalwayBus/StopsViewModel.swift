@@ -9,12 +9,14 @@
 import UIKit
 import AlamofireObjectMapper
 import Alamofire
+import RxSwift
+import RxDataSources
 
 class StopsViewModel{
-
-    var routes : [String] = []
     
-    func getRoutes(){
+    func getRoutes()  -> Observable<[SectionModel<String, String>]>{
+        var routes : [String] = []
+        
         let requestModel = StopsRequestModel()
         
         Alamofire.request(requestModel.getRoutesUrl()).validate().responseArray{ (response: DataResponse<[StopsResponseModel]>) in
@@ -27,13 +29,21 @@ class StopsViewModel{
                 if let stopsArray = stopsArray {
                     for stop in stopsArray {
                         print(stop.long_name)
-                        self.routes.append(stop.long_name!)
+                        routes.append(stop.long_name!)
                     }
                 }
                 
             case .failure(let error):
                 print(error)
             }
+        }
+    
+    
+        return Observable.create { (observer) -> Disposable in
+            let section = [SectionModel(model: "", items: routes)]
+            observer.onNext(section)
+            observer.onCompleted()
+            return Disposables.create{}
         }
     }
 }

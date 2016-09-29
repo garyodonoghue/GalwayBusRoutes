@@ -1,0 +1,4 @@
+nguage: objective-c
+osx_image: xcode8
+xcode_project: GalwayBus.xcodeproj
+xcode_scheme: GalwayBus

@@ -14,7 +14,7 @@ import RxDataSources
 
 class StopsViewModel{
     
-    func getRoutes()  -> Observable<[SectionModel<String, String>]>{
+    func getRoutes()  -> Observable<[String]>{
         var routes : [String] = []
         
         let requestModel = StopsRequestModel()
@@ -38,12 +38,6 @@ class StopsViewModel{
             }
         }
     
-    
-        return Observable.create { (observer) -> Disposable in
-            let section = [SectionModel(model: "", items: routes)]
-            observer.onNext(section)
-            observer.onCompleted()
-            return Disposables.create{}
-        }
+        return Observable.just(routes);
     }
 }

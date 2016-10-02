@@ -19,6 +19,7 @@
 		4EA7D0F61D9820D100DE22F7 /* StopsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA7D0F11D9820D100DE22F7 /* StopsTableViewController.swift */; };
 		4EA7D0F71D9820D100DE22F7 /* StopsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA7D0F21D9820D100DE22F7 /* StopsViewModel.swift */; };
 		4EA7D0F81D9820D100DE22F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA7D0F31D9820D100DE22F7 /* ViewController.swift */; };
+		4EFECBF01DA198AF000FCABF /* StopsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFECBEF1DA198AF000FCABF /* StopsTableViewCell.swift */; };
 		568E2E0DAEE2D79FBA682AD9 /* Pods_GalwayBusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3D7F1B2AAA97BF530A689F /* Pods_GalwayBusTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		4EA7D0F11D9820D100DE22F7 /* StopsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsTableViewController.swift; sourceTree = "<group>"; };
 		4EA7D0F21D9820D100DE22F7 /* StopsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsViewModel.swift; sourceTree = "<group>"; };
 		4EA7D0F31D9820D100DE22F7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4EFECBEF1DA198AF000FCABF /* StopsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsTableViewCell.swift; sourceTree = "<group>"; };
 		9660FDB7FC701DF5F6A14610 /* Pods-GalwayBusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GalwayBusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GalwayBusTests/Pods-GalwayBusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF3D7F1B2AAA97BF530A689F /* Pods_GalwayBusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GalwayBusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7720A3D7053175CC2BD816D /* Pods_GalwayBus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GalwayBus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 				4E1F8E8E1D7F6621007D56C3 /* LaunchScreen.xib */,
 				4E1F8E841D7F6620007D56C3 /* GalwayBus.xcdatamodeld */,
 				4E1F8E801D7F6620007D56C3 /* Supporting Files */,
+				4EFECBEF1DA198AF000FCABF /* StopsTableViewCell.swift */,
 			);
 			path = GalwayBus;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EA7D0F51D9820D100DE22F7 /* StopsResponseModel.swift in Sources */,
+				4EFECBF01DA198AF000FCABF /* StopsTableViewCell.swift in Sources */,
 				4EA7D0F41D9820D100DE22F7 /* StopsRequestModel.swift in Sources */,
 				4EA7D0F71D9820D100DE22F7 /* StopsViewModel.swift in Sources */,
 				4EA7D0F61D9820D100DE22F7 /* StopsTableViewController.swift in Sources */,

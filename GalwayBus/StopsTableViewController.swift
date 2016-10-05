@@ -23,8 +23,10 @@ class StopsTableViewController: ViewController, UITableViewDelegate {
         let routes = viewModel.getRoutes()
         
         routes
-            .bindTo(tableView.rx.items(cellIdentifier: "StopsTableViewCell", cellType: UITableViewCell.self)) { (row, element, cell) in
-                cell.textLabel?.text = "hello"
+            .bindTo(tableView.rx.items) { (tableView, row, element) in
+                let cell = tableView.dequeueReusableCell(withIdentifier: "StopsTableViewCell")!
+                cell.textLabel?.text = "\(element)"
+                return cell
             }
             .addDisposableTo(disposeBag)
     }

@@ -1,33 +1,93 @@
 //
-//  RoutesTableViewController.swift
-//  
+//  StopsTableViewController.swift
+//  GalwayBus
 //
-//  Created by Gary O'Donoghue on 06/09/2016.
-//
+//  Created by Gary O'Donoghue on 11/10/2016.
+//  Copyright © 2016 Gary O'Donoghue. All rights reserved.
 //
 
 import UIKit
-import RxSwift
-import RxDataSources
 
-class StopsTableViewController: ViewController, UITableViewDelegate {
-    
-    @IBOutlet weak var tableView: UITableView!
-    
-    let viewModel = StopsViewModel()
-    let disposeBag = DisposeBag()
+class StopsTableViewController: UITableViewController {
+
+    let routesViewModel = StopsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let routes = viewModel.getRoutes()
-        
-        routes
-            .bindTo(tableView.rx.items) { (tableView, row, element) in
-                let cell = tableView.dequeueReusableCell(withIdentifier: "StopsTableViewCell")!
-                cell.textLabel?.text = "\(element)"
-                return cell
-            }
-            .addDisposableTo(disposeBag)
+
+        routesViewModel.getRoutes()
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    // MARK: - Table view data source
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return routesViewModel.routes.count
+    }
+
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell : StopsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "StopsTableViewCell", for: indexPath) as! StopsTableViewCell
+
+        cell.stopName!.text = routesViewModel.routes[indexPath.row]
+
+        return cell
+    }
+ 
+
+    /*
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    */
+
+    /*
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }    
+    }
+    */
+
+    /*
+    // Override to support rearranging the table view.
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+
+    }
+    */
+
+    /*
+    // Override to support conditional rearranging of the table view.
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the item to be re-orderable.
+        return true
+    }
+    */
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }

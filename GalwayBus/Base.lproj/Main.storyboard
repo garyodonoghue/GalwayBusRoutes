@@ -26,15 +26,15 @@
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dgO-yj-l5w" id="EmM-aG-cfq">
-                                    <frame key="frameInset" width="375" height="44"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sim-Rj-rCl" id="EjX-mZ-ksz"/>
+                        </connections>
                     </tableView>
-                    <connections>
-                        <outlet property="tableView" destination="rdJ-0l-TZb" id="UMr-5D-ohe"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9a-cB-3ez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

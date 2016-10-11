@@ -14,8 +14,9 @@ import RxDataSources
 
 class StopsViewModel{
     
-    func getRoutes()  -> Observable<[String]>{
-        var routes : [String] = []
+    var routes: [String] = []
+    
+    func getRoutes(){
         
         let requestModel = StopsRequestModel()
         
@@ -28,8 +29,8 @@ class StopsViewModel{
                 
                 if let stopsArray = stopsArray {
                     for stop in stopsArray {
-                        print(stop.long_name)
-                        routes.append(stop.long_name!)
+                        print(stop.long_name!)
+                        self.routes.append(stop.long_name!)
                     }
                 }
                 
@@ -38,6 +39,5 @@ class StopsViewModel{
             }
         }
     
-        return Observable.just(routes);
     }
 }

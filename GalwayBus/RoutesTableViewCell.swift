@@ -2,16 +2,14 @@
 //  RoutesTableViewCell.swift
 //  GalwayBus
 //
-//  Created by Gary O'Donoghue on 02/10/2016.
+//  Created by Gary O'Donoghue on 11/10/2016.
 //  Copyright © 2016 Gary O'Donoghue. All rights reserved.
 //
 
 import UIKit
 
-class StopsTableViewCell: UITableViewCell {
+class RoutesTableViewCell: UITableViewCell {
 
-    @IBOutlet var stopName : UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

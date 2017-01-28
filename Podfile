@@ -9,8 +9,6 @@ target 'GalwayBus' do
    pod 'ObjectMapper'
    pod 'Alamofire', '~>4.0.0'
    pod 'AlamofireObjectMapper', '~>4.0.0'
-   pod 'RxSwift', '~>3.0.0.alpha.1'
-   pod 'RxDataSources', '~>1.0.0.beta.1'
 
   target 'GalwayBusTests' do
     inherit! :search_paths

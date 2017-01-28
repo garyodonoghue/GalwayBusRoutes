@@ -12,32 +12,37 @@ import Alamofire
 import RxSwift
 import RxDataSources
 
-class StopsViewModel{
+public class StopsViewModel{
     
-    var routes: [String] = []
+    public var stopsArr : [String] = []
+    private var stopTableView :  UITableView!
     
-    func getRoutes(){
+    public func createStopObservable ( stopTableView : UITableView ){
+        var stops : [String] = []
+        self.stopTableView = stopTableView;
         
         let requestModel = StopsRequestModel()
-        
+            
         Alamofire.request(requestModel.getRoutesUrl()).validate().responseArray{ (response: DataResponse<[StopsResponseModel]>) in
-            
-            let stopsArray = response.result.value
-            
-            switch response.result {
-            case .success( _):
                 
-                if let stopsArray = stopsArray {
-                    for stop in stopsArray {
-                        print(stop.long_name!)
-                        self.routes.append(stop.long_name!)
+                let stopsArray = response.result.value
+                
+                switch response.result {
+                case .success( _):
+                    
+                    if let stopsArray = stopsArray {
+                        for stop in stopsArray {
+                            print(stop.long_name!)
+                            stops.append(stop.long_name!)
+                            self.stopsArr.append(stop.long_name!)
+                        }
                     }
+                    
+                    self.stopTableView.reloadData()
+                    
+                case .failure(let error):
+                    print(error)
                 }
-                
-            case .failure(let error):
-                print(error)
-            }
         }
-    
     }
 }

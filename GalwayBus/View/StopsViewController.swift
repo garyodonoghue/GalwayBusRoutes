@@ -14,7 +14,7 @@ class StopsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        stopsViewModel.createStopObservable(stopTableView: self.stopsTableView)
+        stopsViewModel.getStops(stopTableView: self.stopsTableView)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -22,7 +22,7 @@ class StopsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stopsViewModel.stopsArr.count
+        return stopsViewModel.stopsResponseModel.count
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -36,12 +36,13 @@ class StopsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StopsTableViewCell", for: indexPath) as? StopsTableViewCell
         
-        cell?.stopName?.text = stopsViewModel.stopsArr[indexPath.row]
-        
+        cell?.stopName?.text = stopsViewModel.stopsResponseModel[indexPath.row].long_name
+        cell?.stopRef = stopsViewModel.stopsResponseModel[indexPath.row].stop_ref!
         return cell!
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        stopsViewModel.getStopInfo(stopRef : stopsViewModel.stopsResponseModel[indexPath.row].stop_ref!)
     }
 }

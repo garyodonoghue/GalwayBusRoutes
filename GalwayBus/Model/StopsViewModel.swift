@@ -12,37 +12,54 @@ import Alamofire
 import RxSwift
 import RxDataSources
 
-public class StopsViewModel{
-    
-    public var stopsArr : [String] = []
+public class StopsViewModel {
+
     private var stopTableView :  UITableView!
+    public var stopsResponseModel : [StopsResponseModel] = []
+    public var stopInfo : StopInfoResponseModel?
     
-    public func createStopObservable ( stopTableView : UITableView ){
-        var stops : [String] = []
+    public func getStops ( stopTableView : UITableView ){
         self.stopTableView = stopTableView;
         
         let requestModel = StopsRequestModel()
             
-        Alamofire.request(requestModel.getRoutesUrl()).validate().responseArray{ (response: DataResponse<[StopsResponseModel]>) in
+        Alamofire.request(requestModel.getStopsUrl()).validate().responseArray{ (response: DataResponse<[StopsResponseModel]>) in
                 
-                let stopsArray = response.result.value
+            let stopsArray = response.result.value
+            
+            switch response.result {
+            case .success( _):
                 
-                switch response.result {
-                case .success( _):
+            if let stopsArray = stopsArray {
+                self.stopsResponseModel = stopsArray
+            }
+            
+            self.stopTableView.reloadData()
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    public func getStopInfo ( stopRef : String ){
+        let requestModel = StopsRequestModel()
+        
+        Alamofire.request(requestModel.getStopsByStopRefUrl(stopRef: stopRef)).responseObject { (response: DataResponse<StopInfoResponseModel>) in
+            
+            let stopInfo = response.result.value
+            
+            switch response.result {
+            case .success( _):
+                if let stopInfo = stopInfo {
+                    self.stopInfo = stopInfo
                     
-                    if let stopsArray = stopsArray {
-                        for stop in stopsArray {
-                            //print(stop)
-                            stops.append(stop.long_name!)
-                            self.stopsArr.append(stop.long_name!)
-                        }
-                    }
-                    
-                    self.stopTableView.reloadData()
-                    
-                case .failure(let error):
-                    print(error)
+                    // TODO Present popup with times? Pass completion handler in here from VC to display popup modally?
                 }
+                
+            case .failure(let error):
+                print(error)
+            }
         }
     }
 }

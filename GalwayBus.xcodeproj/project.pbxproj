@@ -19,6 +19,8 @@
 		4E5A0A611E3D653F009D30F6 /* StopsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5A0A5E1E3D653F009D30F6 /* StopsRequestModel.swift */; };
 		4E5A0A621E3D653F009D30F6 /* StopsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5A0A5F1E3D653F009D30F6 /* StopsResponseModel.swift */; };
 		4E5A0A631E3D653F009D30F6 /* StopsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5A0A601E3D653F009D30F6 /* StopsViewModel.swift */; };
+		4EEA32961E3EA05800C4226B /* StopInfoResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA32951E3EA05800C4226B /* StopInfoResponseModel.swift */; };
+		4EEA32981E3EA9C800C4226B /* TimetableInfoResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA32971E3EA9C800C4226B /* TimetableInfoResponseModel.swift */; };
 		568E2E0DAEE2D79FBA682AD9 /* Pods_GalwayBusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3D7F1B2AAA97BF530A689F /* Pods_GalwayBusTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		4E5A0A5E1E3D653F009D30F6 /* StopsRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsRequestModel.swift; sourceTree = "<group>"; };
 		4E5A0A5F1E3D653F009D30F6 /* StopsResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsResponseModel.swift; sourceTree = "<group>"; };
 		4E5A0A601E3D653F009D30F6 /* StopsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsViewModel.swift; sourceTree = "<group>"; };
+		4EEA32951E3EA05800C4226B /* StopInfoResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopInfoResponseModel.swift; sourceTree = "<group>"; };
+		4EEA32971E3EA9C800C4226B /* TimetableInfoResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableInfoResponseModel.swift; sourceTree = "<group>"; };
 		9660FDB7FC701DF5F6A14610 /* Pods-GalwayBusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GalwayBusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GalwayBusTests/Pods-GalwayBusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF3D7F1B2AAA97BF530A689F /* Pods_GalwayBusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GalwayBusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7720A3D7053175CC2BD816D /* Pods_GalwayBus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GalwayBus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +166,8 @@
 				4E5A0A5E1E3D653F009D30F6 /* StopsRequestModel.swift */,
 				4E5A0A5F1E3D653F009D30F6 /* StopsResponseModel.swift */,
 				4E5A0A601E3D653F009D30F6 /* StopsViewModel.swift */,
+				4EEA32951E3EA05800C4226B /* StopInfoResponseModel.swift */,
+				4EEA32971E3EA9C800C4226B /* TimetableInfoResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -376,9 +382,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EEA32961E3EA05800C4226B /* StopInfoResponseModel.swift in Sources */,
 				4E5A0A611E3D653F009D30F6 /* StopsRequestModel.swift in Sources */,
 				4E5A0A631E3D653F009D30F6 /* StopsViewModel.swift in Sources */,
 				4E1F8E831D7F6620007D56C3 /* AppDelegate.swift in Sources */,
+				4EEA32981E3EA9C800C4226B /* TimetableInfoResponseModel.swift in Sources */,
 				4E4B1D5A1E3D65C10044DE78 /* StopsViewController.swift in Sources */,
 				4E4B1D581E3D65C10044DE78 /* StopsTableViewCell.swift in Sources */,
 				4E5A0A621E3D653F009D30F6 /* StopsResponseModel.swift in Sources */,

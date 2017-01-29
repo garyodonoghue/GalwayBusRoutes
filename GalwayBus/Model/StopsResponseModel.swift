@@ -27,7 +27,7 @@ import ObjectMapper
  }, {
  
 */
-class StopsResponseModel: Mappable {
+public class StopsResponseModel: Mappable {
  
     var long_name : String?
     var stop_id : Int?
@@ -36,11 +36,11 @@ class StopsResponseModel: Mappable {
     var latitude : Decimal?
     var longitude : Decimal?
     
-    required init?(map: Map){
+    required public init?(map: Map){
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         long_name <- map["long_name"]
         stop_id <- map["stop_id"]
         stop_ref <- map["stop_ref"]

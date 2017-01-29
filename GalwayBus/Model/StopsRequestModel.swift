@@ -14,8 +14,12 @@ class StopsRequestModel {
     public var timetableId : Int = 0;
     
     
-    public func getRoutesUrl() -> String{
+    public func getStopsUrl() -> String{
         return "\(requestUrl).json";
+    }
+    
+    public func getStopsByStopRefUrl(stopRef : String) -> String{
+        return "\(requestUrl)/\(stopRef).json";
     }
     
     public func getRoutesByTimetableIdUrl( timetableId : Int) -> String{

@@ -32,7 +32,7 @@ public class StopsViewModel{
                     
                     if let stopsArray = stopsArray {
                         for stop in stopsArray {
-                            print(stop.long_name!)
+                            //print(stop)
                             stops.append(stop.long_name!)
                             self.stopsArr.append(stop.long_name!)
                         }

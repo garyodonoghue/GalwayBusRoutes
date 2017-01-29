@@ -36,7 +36,7 @@ class StopsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StopsTableViewCell", for: indexPath) as? StopsTableViewCell
         
-          cell?.textLabel?.text = stopsViewModel.stopsArr[indexPath.row]
+        cell?.stopName?.text = stopsViewModel.stopsArr[indexPath.row]
         
         return cell!
     }

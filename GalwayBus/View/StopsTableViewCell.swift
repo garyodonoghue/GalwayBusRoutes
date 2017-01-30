@@ -11,5 +11,5 @@ import UIKit
 class StopsTableViewCell: UITableViewCell {
 
     @IBOutlet var stopName : UILabel!
-    var stopRef : String = ""
+    var stopRef : String?
 }

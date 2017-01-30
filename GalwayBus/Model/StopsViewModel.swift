@@ -42,7 +42,7 @@ public class StopsViewModel {
         }
     }
     
-    public func getStopInfo ( stopRef : String ){
+    public func getStopInfo ( stopRef : String, stopsTableView : UITableView, responseModel : StopsResponseModel){
         let requestModel = StopsRequestModel()
         
         Alamofire.request(requestModel.getStopsByStopRefUrl(stopRef: stopRef)).responseObject { (response: DataResponse<StopInfoResponseModel>) in
@@ -54,7 +54,8 @@ public class StopsViewModel {
                 if let stopInfo = stopInfo {
                     self.stopInfo = stopInfo
                     
-                    // TODO Present popup with times? Pass completion handler in here from VC to display popup modally?
+                    responseModel.long_name = stopInfo.times?[0].timetable_id
+                    stopsTableView.endUpdates()
                 }
                 
             case .failure(let error):

@@ -40,6 +40,10 @@ public class StopsResponseModel: Mappable {
         
     }
     
+    public init(){
+    
+    }
+    
     public func mapping(map: Map) {
         long_name <- map["long_name"]
         stop_id <- map["stop_id"]

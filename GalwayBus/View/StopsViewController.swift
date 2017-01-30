@@ -37,12 +37,23 @@ class StopsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StopsTableViewCell", for: indexPath) as? StopsTableViewCell
         
         cell?.stopName?.text = stopsViewModel.stopsResponseModel[indexPath.row].long_name
-        cell?.stopRef = stopsViewModel.stopsResponseModel[indexPath.row].stop_ref!
+        cell?.stopRef = stopsViewModel.stopsResponseModel[indexPath.row].stop_ref
         return cell!
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        stopsViewModel.getStopInfo(stopRef : stopsViewModel.stopsResponseModel[indexPath.row].stop_ref!)
+        
+        let indexPathNew : IndexPath = IndexPath.init(row: indexPath.row+1, section: indexPath.section)
+        self.stopsTableView.beginUpdates()
+        
+        
+        
+        let responseModel : StopsResponseModel = StopsResponseModel()
+        
+        stopsViewModel.getStopInfo(stopRef : stopsViewModel.stopsResponseModel[indexPath.row].stop_ref!, stopsTableView : self.stopsTableView, responseModel : responseModel)
+        
+        stopsViewModel.stopsResponseModel.insert(responseModel, at:indexPath.row+1)
+        self.stopsTableView.insertRows(at: [indexPathNew], with: UITableViewRowAnimation.fade)
+        
     }
 }

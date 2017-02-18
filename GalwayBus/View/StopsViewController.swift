@@ -46,8 +46,6 @@ class StopsViewController: UITableViewController {
         let indexPathNew : IndexPath = IndexPath.init(row: indexPath.row+1, section: indexPath.section)
         self.stopsTableView.beginUpdates()
         
-        
-        
         let responseModel : StopsResponseModel = StopsResponseModel()
         
         stopsViewModel.getStopInfo(stopRef : stopsViewModel.stopsResponseModel[indexPath.row].stop_ref!, stopsTableView : self.stopsTableView, responseModel : responseModel)

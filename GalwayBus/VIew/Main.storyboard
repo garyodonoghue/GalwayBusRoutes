@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12100" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2yc-5j-d6H">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12072"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Menu-->
+        <scene sceneID="imb-dd-Bmx">
+            <objects>
+                <viewController id="uup-jp-Wxw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cqN-6z-wkc"/>
+                        <viewControllerLayoutGuide type="bottom" id="qg7-3U-bEm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MGX-mg-aR4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BlV-Ci-Lbm">
+                                <rect key="frame" x="110" y="178" width="154" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Pick a Stop"/>
+                                <connections>
+                                    <segue destination="sim-Rj-rCl" kind="show" id="gJA-5g-JEs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjg-d4-xud">
+                                <rect key="frame" x="110" y="250" width="154" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Closest Stop"/>
+                                <connections>
+                                    <segue destination="Cns-me-3Ta" kind="show" id="XZn-qF-zgt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose an option below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CkP-EM-aKV">
+                                <rect key="frame" x="39" y="72" width="296" height="118"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CkP-EM-aKV" firstAttribute="leading" secondItem="MGX-mg-aR4" secondAttribute="leadingMargin" constant="23" id="8pJ-PZ-V8b"/>
+                            <constraint firstItem="gjg-d4-xud" firstAttribute="trailing" secondItem="BlV-Ci-Lbm" secondAttribute="trailing" id="Dgq-iw-FAB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BlV-Ci-Lbm" secondAttribute="trailing" constant="95" id="NZi-W9-g6m"/>
+                            <constraint firstItem="gjg-d4-xud" firstAttribute="top" secondItem="CkP-EM-aKV" secondAttribute="bottom" constant="60" id="O3J-25-ePd"/>
+                            <constraint firstItem="CkP-EM-aKV" firstAttribute="top" secondItem="cqN-6z-wkc" secondAttribute="bottom" constant="8" symbolic="YES" id="OD3-50-4x5"/>
+                            <constraint firstItem="BlV-Ci-Lbm" firstAttribute="top" secondItem="cqN-6z-wkc" secondAttribute="bottom" constant="114" id="OVd-hS-irB"/>
+                            <constraint firstItem="gjg-d4-xud" firstAttribute="top" secondItem="BlV-Ci-Lbm" secondAttribute="bottom" constant="32" id="P5P-ps-XVG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CkP-EM-aKV" secondAttribute="trailing" constant="24" id="oeg-pg-DZE"/>
+                            <constraint firstItem="gjg-d4-xud" firstAttribute="leading" secondItem="BlV-Ci-Lbm" secondAttribute="leading" id="q5c-c8-kas"/>
+                            <constraint firstItem="BlV-Ci-Lbm" firstAttribute="leading" secondItem="MGX-mg-aR4" secondAttribute="leadingMargin" constant="94" id="yHd-nd-yWl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Main Menu" id="ot5-86-n5H"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CUP-ak-QuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109.5999999999999" y="96.7016491754123"/>
+        </scene>
+        <!--Pick a Stop-->
+        <scene sceneID="axZ-ld-3b3">
+            <objects>
+                <tableViewController id="sim-Rj-rCl" customClass="StopsTableViewController" customModule="GalwayBus" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rdJ-0l-TZb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StopsTableViewCell" id="dgO-yj-l5w" customClass="StopsTableViewCell" customModule="GalwayBus" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dgO-yj-l5w" id="EmM-aG-cfq">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Pick a Stop" id="f4b-ev-ni0"/>
+                    <connections>
+                        <outlet property="tableView" destination="rdJ-0l-TZb" id="UMr-5D-ohe"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d9a-cB-3ez" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1922" y="-342"/>
+        </scene>
+        <!--Stops Map Kit View Controller-->
+        <scene sceneID="3Sc-ON-RdN">
+            <objects>
+                <viewController id="Cns-me-3Ta" customClass="StopsMapKitViewController" customModule="GalwayBus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T6d-Vn-sGF"/>
+                        <viewControllerLayoutGuide type="bottom" id="hJ9-Yp-Yym"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X0Y-a6-3RD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bgK-6H-sVY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bgK-6H-sVY" firstAttribute="leading" secondItem="X0Y-a6-3RD" secondAttribute="leading" id="8Vd-ot-3yS"/>
+                            <constraint firstAttribute="trailing" secondItem="bgK-6H-sVY" secondAttribute="trailing" id="TQW-uU-gTv"/>
+                            <constraint firstItem="hJ9-Yp-Yym" firstAttribute="top" secondItem="bgK-6H-sVY" secondAttribute="bottom" id="hCR-Ro-U5g"/>
+                            <constraint firstItem="bgK-6H-sVY" firstAttribute="top" secondItem="T6d-Vn-sGF" secondAttribute="bottom" id="wvY-yu-8XC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="bgK-6H-sVY" id="fB2-5f-Pfh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kJ6-KE-lay" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1920.8" y="461.91904047976016"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8Gq-vH-FEE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2yc-5j-d6H" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4ju-NS-YLW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uup-jp-Wxw" kind="relationship" relationship="rootViewController" id="Rjo-s0-4x1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="raL-db-i23" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="237.59999999999999" y="110.19490254872565"/>
+        </scene>
+    </scenes>
+</document>
